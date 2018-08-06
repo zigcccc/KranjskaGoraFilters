@@ -1,0 +1,293 @@
+<link href="/skins/filter.css" rel="stylesheet" />
+<h1>Pohodni&scaron;tvo v Kranjski Gori</h1>
+<p>
+  <br />
+  <div class="search-form">
+    <div class="input-group">
+      <label for="namigi">Iščite po poteh</label>
+      <input type="text" id="namigi-search-input">
+    </div>
+    <div class="input-group">
+      <label for="lahke">Lahka pot</label>
+      <input type="checkbox" onclick="lahkapot()" name="lahka">
+    </div>
+    <div class="input-group">
+      <label for="lahke">Težka pot</label>
+      <input type="checkbox" onclick="tezkapot()" name="tezka">
+    </div>
+    <div class="input-group">
+      <label for="lahke">Kratka pot</label>
+      <input type="checkbox" onclick="kratkapot()" name="kratka">
+    </div>
+    <div class="input-group">
+      <label for="lahke">Dolga pot</label>
+      <input type="checkbox" onclick="dolgapot()" name="dolga">
+    </div>
+    <div class="input-group">
+      <label for="lahke">Vaše izhodišče</label>
+      <select name="izhodisce" id="izhodisce" onchange="izhodisce()">
+        <option value=""> </option>
+        <option value="kranjskagora">Kranjska Gora</option>
+        <option value="mojstrana">Mojstrana</option>
+        <option value="vrsic">Vršič</option>
+        <option value="belca">Belca</option>
+        <option value="gozdmartuljek">Gozd Martuljek</option>
+        <option value="dovje">Dovje</option>
+      </select>
+    </div>
+  </div>
+</p>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="kranjskagora">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/ciprnik" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Ciprnik/Ciprnik_DSC0620.jpg"/>
+    <h3>Ciprnik (mimo Bedančevega doma)</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="vrsic">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/slemenova-spica" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Slemenova špica/Sleme Smitek_DSC0727.jpg"/>
+    <h3>Slemenova &scaron;pica</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="tezka" data-dolzina="kratka" data-izhodisce="vrsic">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/mala-mojstrovka" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Mala Mojstrovka/Mojstrovka-Jalovec-Mangart-DSC_5368.JPG"/>
+    <h3>Mala Mojstrovka</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="gozdmartuljek">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/vosca" target="_self">
+    <img src="/media/Vosca.Smitek-DSC_1131.JPG" alt="Vošca" />
+    <h3>Vo&scaron;ca</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="tezka" data-dolzina="dolga" data-izhodisce="belca">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/kepa" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Kepa/238.JPG" />
+    <h3>Kepa</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="dovje">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/dovska-baba" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Dovška Baba/738.jpg" />
+    <h3>Dov&scaron;ka Baba</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="mojstrana">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/grancisce-juzna" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Grančišče/3.jpg" />
+    <h3>Granči&scaron;če (južna pot)</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="mojstrana">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/vrtaski-vrh" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Vrtaški vrh/Vrtaska planina koca.jpg"/>
+    <h3>Vrta&scaron;ki vrh</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="planica">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/kotovo-sedlo" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Kotovo sedlo/673.jpg" />
+    <h3>Kotovo sedlo (po meli&scaron;ču)</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="gozdmartuljek">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/bivak-pod-spikom" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Bivak pod Špikom/Spik- 059.JPG"/>
+    <h3>Bivak pod &Scaron;pikom (direktna pot)</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="tezka" data-dolzina="dolga" data-izhodisce="kranjskagora">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/alpe-adria-trail" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Alpe Adria Trail/alpe-adria-trail-1.jpg" style="width: 800px; height: 300px;" />
+    <h3>Alpe Adria Trail</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="kranjskagora">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/pravljicna-pot-10-koc" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Pravljična pot 10 koč/pravljicna-pot-10-koc-3.jpg" style="width: 800px; height: 300px;" />
+    <h3>Pravljična pot 10 koč</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="zgornjaradovna">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/jakobova-pot" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Jakobova pot/jakobova-romarska-pot-3.jpg" style="width: 800px; height: 300px;" />
+    <h3>Jakobova pot</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="trenta">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/via-alpina" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Via Alpina/via-alpina-2.jpg" style="width: 800px; height: 300px;" />
+    <h3>Via Alpina</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="ratece">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/turisticna-pot-tromeja" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Turistična pot Tromeja/tromeja.JPG" style="width: 800px; height: 300px;" />
+    <h3>Turistična pot Tromeja</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="planica">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/planica-pot-po-dolini" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Planica pot po dolini/planica pot po dolini.jpg" style="width: 800px; height: 300px;" />
+    <h3>Planica - Pot po dolini</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="mojstrana">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/pot-triglavske-bistrice" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Pot Triglavske Bistrice/bistrica.jpg" style="width: 800px; height: 300px;" />
+    <h3>Pot Triglavske Bistrice</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="mojstrana">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/jerebikovec" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/jerebikovec/jerebikovec.jpg" style="width: 800px; height: 300px;" />
+    <h3>Jerebikovec</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="tezka" data-dolzina="kratka" data-izhodisce="dovje">
+  <a href="/sl/aktivnosti/kolesarjenje-pohodnistvo/pohodnistvo/borovlje" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Namigi za izlete/Borovlje/borovlje.jpg" style="width: 800px; height: 300px;" />
+    <h3>Borovlje</h3>
+  </a>
+</div>
+<script defer>
+  var namig = document.querySelectorAll('.inner_izhbox');
+  var numOfNamigs = namig.length;
+  var namigiTitles = [];
+  var namigiZahtevnost = [];
+  var namigiDolzina = [];
+  var namigiIzhodisce = [];
+  var select = document.querySelector('#izhodisce');
+
+  for (var i = 0; i < numOfNamigs; i++) {
+    namigiTitles.push(namig[i].querySelector('h3').innerText);
+    namigiZahtevnost.push(namig[i].dataset.tezavnost);
+    namigiDolzina.push(namig[i].dataset.dolzina);
+    namigiIzhodisce.push(namig[i].dataset.izhodisce);
+  }
+
+  function izhodisce() {
+    var selectedText = select.value;
+
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (selectedText != "") {
+        if (namig[i].dataset.izhodisce.indexOf(selectedText) > -1) {
+          namig[i].hidden = false;
+        } else {
+          namig[i].hidden = true;
+        }
+      } else {
+        namig[i].hidden = false;
+      }
+    }
+  }
+
+  function lahkapot() {
+    var input = $('input[name="lahka"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.tezavnost.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function tezkapot() {
+    var input = $('input[name="tezka"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.tezavnost.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function kratkapot() {
+    var input = $('input[name="kratka"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.dolzina.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function dolgapot() {
+    var input = $('input[name="dolga"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.dolzina.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function filter() {
+    var numOfTitles = namigiTitles.length;
+    var searchForm = document.querySelector('#namigi-search-input');
+  
+    searchForm.addEventListener('keyup', function(e){
+      var filter = searchForm.value.toUpperCase();
+      for (var i = 0; i < numOfTitles; i++) {
+        if (namigiTitles[i].toUpperCase().indexOf(filter) > -1) {
+          if (namig[i].hidden) {
+            namig[i].hidden = false;
+          }
+        } else {
+          if (!namig[i].hidden) {
+            namig[i].hidden = true;
+          }
+        }
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    filter();
+  });
+
+</script>

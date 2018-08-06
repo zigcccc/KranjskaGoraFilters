@@ -1,0 +1,209 @@
+<link href="https://www.kranjska-gora.si/skins/filter.css" rel="stylesheet" />
+<div class="search-form">
+  <div class="input-group">
+    <label for="search">Prei&scaron;či poti</label>
+    <input id="namigi-search-input" name="search" placeholder="" type="text"
+    />
+  </div>
+
+  <div class="input-group">
+    <label for="lahka">Ravninska pot</label>
+    <input name="lahka" onclick="lahkapot()" type="checkbox" />
+  </div>
+
+  <div class="input-group">
+    <label for="tezka">Gorska pot</label>
+    <input name="tezka" onclick="tezkapot()" type="checkbox" />
+  </div>
+
+  <div class="input-group">
+    <label for="kratka">Kratka pot</label>
+    <input name="kratka" onclick="kratkapot()" type="checkbox" />
+  </div>
+
+  <div class="input-group">
+    <label for="dolga">Dolga pot</label>
+    <input name="dolga" onclick="dolgapot()" type="checkbox" />
+  </div>
+
+  <div class="input-group">
+    <label for="izhodisce">Izhodi&scaron;če</label>
+    <select id="izhodisce" name="izhodisce" onchange="izhodisce()">
+      <option value="">---</option>
+      <option value="kranjskagora">Kranjska Gora</option>
+      <option value="gozdmartuljek">Gozd Martuljek</option>
+      <option value="mojstrana">Mojstrana</option>
+      <option value="dovje">Dovje</option>
+      <option value="planica">Planica</option>
+      <option value="belca">Belca</option>
+      <option value="vrsic">Vr&scaron;ič</option>
+      <option value="trenta">Trenta</option>
+      <option value="ratece">Rateče</option>
+      <option value="zgornjaradovna">Zgornja Radovna</option>
+    </select>
+  </div>
+</div>
+
+<h1 style="text-align: center;">Namigi za kolesarske izlete</h1>
+
+<p>&nbsp;</p>
+
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="mojstrana">
+  <a href="https://www.kranjska-gora.si/sl/aktivnosti/kolesarjenje-pohodnistvo/kolesarjenje/kolesarska-pot-radovna" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Kolesarjenje/Kolesarska pot Radovna/Radovna.jpg"
+      style="width: 800px; height: 300px;" />
+    <h3>Kolesarska pot Radovna</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="dolga" data-izhodisce="mojstrana">
+  <a href="https://www.kranjska-gora.si/sl/aktivnosti/kolesarjenje-pohodnistvo/kolesarjenje/kolesarska-pot-mojstrana-kranjska-gora"
+    target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Kolesarjenje/Kolesarska pot Rateče - Planica/ratece-planica.jpg" style="width: 800px; height: 300px;" />
+    <h3>Kolesarska pot Mojstrana&nbsp;- Kranjska Gora</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="tezka" data-dolzina="kratka" data-izhodisce="mojstrana">
+  <a href="https://www.kranjska-gora.si/sl/aktivnosti/kolesarjenje-pohodnistvo/kolesarjenje/kolesarska-pot-pod-severno-triglavsko-steno"
+    target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Kolesarjenje/Kolesarska pot Pod Severno Triglavsko Steno/vrata.jpg"
+      style="width: 800px; height: 300px;" />
+    <h3>Kolesarska pot Pod Severno Triglavsko Steno</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="tezka" data-dolzina="dolga" data-izhodisce="mojstrana">
+  <a href="https://www.kranjska-gora.si/sl/aktivnosti/kolesarjenje-pohodnistvo/kolesarjenje/kolesarska-pot-kot-in-krma" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Kolesarjenje/Kolesarska pot Krma - Kot/krma - kot.jpg"
+      style="width: 800px; height: 300px;" />
+    <h3>Kolesarska pot Kot in Krma</h3>
+  </a>
+</div>
+
+<div class="inner_izhbox" data-tezavnost="lahka" data-dolzina="kratka" data-izhodisce="mojstrana">
+  <a href="https://www.kranjska-gora.si/sl/aktivnosti/kolesarjenje-pohodnistvo/kolesarjenje/kolesarska-pot-cez-visoke" target="_self">
+    <img src="/media/slikeIT/Galerije/Aktivnosti/Kolesarjenje in pohodništvo/Kolesarjenje/Kolesarska pot Čez Visoke/cez visoke.jpg"
+      style="width: 800px; height: 300px;" /> 
+    <h3>Kolesarska pot čez Visoke</h3>
+  </a>
+</div>
+<script>
+  var namig = document.querySelectorAll('.inner_izhbox');
+  var numOfNamigs = namig.length;
+  var namigiTitles = [];
+  var namigiZahtevnost = [];
+  var namigiDolzina = [];
+  var namigiIzhodisce = [];
+  var select = document.querySelector('#izhodisce');
+
+  for (var i = 0; i < numOfNamigs; i++) {
+    var currentNamig = namig[i];
+    namigiTitles.push(currentNamig.children[0].innerText);
+    namigiZahtevnost.push(currentNamig.dataset.tezavnost);
+    namigiDolzina.push(currentNamig.dataset.dolzina);
+    namigiIzhodisce.push(currentNamig.dataset.izhodisce);
+  }
+
+  function izhodisce() {
+    var selected = select.find('option:selected');
+    var selectedText = selected.val();
+
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (selectedText != "") {
+        if (namig[i].dataset.izhodisce.indexOf(selectedText) > -1) {
+          namig[i].hidden = false;
+        } else {
+          namig[i].hidden = true;
+        }
+      } else {
+        namig[i].hidden = false;
+      }
+    }
+  }
+
+  function lahkapot() {
+    var input = $('input[name="lahka"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.tezavnost.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function tezkapot() {
+    var input = $('input[name="tezka"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.tezavnost.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function kratkapot() {
+    var input = $('input[name="kratka"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.dolzina.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function dolgapot() {
+    var input = $('input[name="dolga"]');
+    var inputVal = input.attr('name');
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (input.prop('checked') == false) {
+        namig[i].hidden = false;
+      } else {
+        if (namig[i].dataset.dolzina.indexOf(inputVal) > -1) {
+
+        } else {
+          namig[i].hidden = true;
+        }
+      }
+    }
+  }
+
+  function filter() {
+    var numOfTitles = namigiTitles.length;
+    var searchForm = document.querySelector('#namigi-search-input');
+    searchForm.addEventListener('keyup', function(e){
+      var filter = searchForm.value.toUpperCase();
+      for (var i = 0; i < numOfTitles; i++) {
+        if (namigiTitles[i].toUpperCase().indexOf(filter) > -1) {
+          if (namig[i].hidden) {
+            namig[i].hidden = false;
+          }
+        } else {
+          if (!namig[i].hidden) {
+            namig[i].hidden = true;
+          }
+        }
+      }
+    });
+  }
+  filter();
+</script>
