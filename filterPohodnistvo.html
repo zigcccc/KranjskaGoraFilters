@@ -5,24 +5,27 @@
   <div class="search-form">
     <div class="input-group">
       <label for="namigi">Iščite po poteh</label>
-      <input type="text" id="namigi-search-input">
+      <input type="text" id="namigi-search-input" onkeyup="filter()">
     </div>
+
     <div class="input-group">
-      <label for="lahke">Lahka pot</label>
-      <input type="checkbox" onclick="lahkapot()" name="lahka">
+      <label for="tezavnost">Težavnost</label>
+      <select name="tezavnost" id="tezavnost" onchange="tezavnost()">
+        <option selected value="">---</option>
+        <option value="lahka">Lahka pot</option>
+        <option value="tezka">Težka pot</option>
+      </select>
     </div>
+  
     <div class="input-group">
-      <label for="lahke">Težka pot</label>
-      <input type="checkbox" onclick="tezkapot()" name="tezka">
+      <label for="dolzina">Dolžina</label>
+      <select name="dolzina" id="dolzina" onchange="dolzina()">
+        <option selected value="">---</option>
+        <option value="kratka">Kratka pot</option>
+        <option value="dolga">Dolga pot</option>
+      </select>
     </div>
-    <div class="input-group">
-      <label for="lahke">Kratka pot</label>
-      <input type="checkbox" onclick="kratkapot()" name="kratka">
-    </div>
-    <div class="input-group">
-      <label for="lahke">Dolga pot</label>
-      <input type="checkbox" onclick="dolgapot()" name="dolga">
-    </div>
+
     <div class="input-group">
       <label for="lahke">Vaše izhodišče</label>
       <select name="izhodisce" id="izhodisce" onchange="izhodisce()">
@@ -177,7 +180,10 @@
   var namigiZahtevnost = [];
   var namigiDolzina = [];
   var namigiIzhodisce = [];
-  var select = document.querySelector('#izhodisce');
+  var selectDolzina = document.querySelector('#dolzina');
+  var selectTezavnost = document.querySelector('#tezavnost');
+  var selectIzhodisce = document.querySelector('#izhodisce');
+  var searchForm = document.querySelector('#namigi-search-input');
 
   for (var i = 0; i < numOfNamigs; i++) {
     namigiTitles.push(namig[i].querySelector('h3').innerText);
@@ -187,107 +193,55 @@
   }
 
   function izhodisce() {
-    var selectedText = select.value;
+    var selectedText = selectIzhodisce.value;
 
     for (var i = 0; i < numOfNamigs; i++) {
-      if (selectedText != "") {
-        if (namig[i].dataset.izhodisce.indexOf(selectedText) > -1) {
-          namig[i].hidden = false;
-        } else {
-          namig[i].hidden = true;
-        }
+      if (selectedText != "" && namig[i].dataset.izhodisce.indexOf(selectedText) < 0) {
+        namig[i].hidden = true;
       } else {
         namig[i].hidden = false;
       }
     }
   }
 
-  function lahkapot() {
-    var input = $('input[name="lahka"]');
-    var inputVal = input.attr('name');
-    for (var i = 0; i < numOfNamigs; i++) {
-      if (input.prop('checked') == false) {
-        namig[i].hidden = false;
-      } else {
-        if (namig[i].dataset.tezavnost.indexOf(inputVal) > -1) {
+  function dolzina() {
+    var selectedText = selectDolzina.value;
 
-        } else {
-          namig[i].hidden = true;
-        }
+    for (var i = 0; i < numOfNamigs; i++) {
+      if (selectedText != "" && namig[i].dataset.dolzina.indexOf(selectedText) < 0 ) {
+        namig[i].hidden = true;
+      } else {
+        namig[i].hidden = false;
       }
     }
   }
 
-  function tezkapot() {
-    var input = $('input[name="tezka"]');
-    var inputVal = input.attr('name');
+  function tezavnost() {
+    var selectedText = selectTezavnost.value;
+
     for (var i = 0; i < numOfNamigs; i++) {
-      if (input.prop('checked') == false) {
-        namig[i].hidden = false;
+      if (selectedText != "" && namig[i].dataset.tezavnost.indexOf(selectedText) < 0) {
+        namig[i].hidden = true;
       } else {
-        if (namig[i].dataset.tezavnost.indexOf(inputVal) > -1) {
-
-        } else {
-          namig[i].hidden = true;
-        }
-      }
-    }
-  }
-
-  function kratkapot() {
-    var input = $('input[name="kratka"]');
-    var inputVal = input.attr('name');
-    for (var i = 0; i < numOfNamigs; i++) {
-      if (input.prop('checked') == false) {
         namig[i].hidden = false;
-      } else {
-        if (namig[i].dataset.dolzina.indexOf(inputVal) > -1) {
-
-        } else {
-          namig[i].hidden = true;
-        }
-      }
-    }
-  }
-
-  function dolgapot() {
-    var input = $('input[name="dolga"]');
-    var inputVal = input.attr('name');
-    for (var i = 0; i < numOfNamigs; i++) {
-      if (input.prop('checked') == false) {
-        namig[i].hidden = false;
-      } else {
-        if (namig[i].dataset.dolzina.indexOf(inputVal) > -1) {
-
-        } else {
-          namig[i].hidden = true;
-        }
       }
     }
   }
 
   function filter() {
     var numOfTitles = namigiTitles.length;
-    var searchForm = document.querySelector('#namigi-search-input');
-  
-    searchForm.addEventListener('keyup', function(e){
-      var filter = searchForm.value.toUpperCase();
-      for (var i = 0; i < numOfTitles; i++) {
-        if (namigiTitles[i].toUpperCase().indexOf(filter) > -1) {
-          if (namig[i].hidden) {
-            namig[i].hidden = false;
-          }
-        } else {
-          if (!namig[i].hidden) {
-            namig[i].hidden = true;
-          }
+    var filter = searchForm.value.toUpperCase();
+    for (var i = 0; i < numOfTitles; i++) {
+      if (namigiTitles[i].toUpperCase().indexOf(filter) > -1) {
+        if (namig[i].hidden) {
+          namig[i].hidden = false;
+        }
+      } else {
+        if (!namig[i].hidden) {
+          namig[i].hidden = true;
         }
       }
-    });
+    }
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    filter();
-  });
 
 </script>
